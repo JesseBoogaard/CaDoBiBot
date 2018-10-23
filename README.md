@@ -1,6 +1,6 @@
 # CaDoBiBot
 
-Simple Discord bot made using [Discord.js](https://discord.js.org/#/) and the [Shiba API](shibe.online).
+Simple Discord bot made using [Discord.js](https://discord.js.org/#/) and the [Shiba API](https://shibe.online/).
 
 ## List of commands
 
