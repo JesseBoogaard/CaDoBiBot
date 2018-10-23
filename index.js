@@ -21,7 +21,7 @@ client.on(`message`, msg => {
             return new Promise((fulfill, reject) => {
                 getPic(shibURL).then((res) => {
                     if(res != ``){
-                        fulfill(msg.channel.sendFile(res));
+                        fulfill(msg.channel.send({file: res}));
                     }else{
                         reject(msg.channel.send(`bot machine bronk`));
                     };
@@ -31,7 +31,7 @@ client.on(`message`, msg => {
             return new Promise((fulfill, reject) => {
                 getPic(cadeURL).then((res) => {
                     if(res != ``){
-                        fulfill(msg.channel.sendFile(res));
+                        fulfill(msg.channel.send({file: res}));
                     }else{
                         reject(msg.channel.send(`bot machine bronk`));
                     };
@@ -41,7 +41,7 @@ client.on(`message`, msg => {
             return new Promise((fulfill, reject) => {
                 getPic(birbURL).then((res) => {
                     if(res != ``){
-                        fulfill(msg.channel.sendFile(res));
+                        fulfill(msg.channel.send({file: res}));
                     }else{
                         reject(msg.channel.send(`bot machine bronk`));
                     };
