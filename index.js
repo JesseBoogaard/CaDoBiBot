@@ -1,6 +1,6 @@
 require(`dotenv`).config()
 const Discord = require(`discord.js`);
-const fetch = require(`node-fetch`)
+const fetch = require(`node-fetch`);
 let command;
 const client = new Discord.Client();
 const prefix = `!gib`;
