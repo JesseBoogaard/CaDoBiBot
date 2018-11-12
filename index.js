@@ -16,40 +16,42 @@ client.on(`message`, msg => {
     if (msg.content.startsWith(prefix)) {
         const args = msg.content.slice(prefix.length).trim().split(/ +/g);
         command = args.shift().toLowerCase();
+        switch(command){
+            case 'shib': case 'dog': case 'doggo': case 'doge': case 'shibe': case 'shiba':
+                return new Promise((fulfill, reject) => {
+                    getPic(shibURL).then((res) => {
+                        if(res != ``){
+                            fulfill(msg.channel.send({file: res}));
+                        }else{
+                            reject(msg.channel.send(`bot machine bronk`));
+                        };
+                    });
+                });
 
-        if(command == `shib`){
-            return new Promise((fulfill, reject) => {
-                getPic(shibURL).then((res) => {
-                    if(res != ``){
-                        fulfill(msg.channel.send({file: res}));
-                    }else{
-                        reject(msg.channel.send(`bot machine bronk`));
-                    };
+            case 'cade': case 'cat': case 'cate': case 'catto': case 'kat': case 'caddo':
+                return new Promise((fulfill, reject) => {
+                    getPic(cadeURL).then((res) => {
+                        if(res != ``){
+                            fulfill(msg.channel.send({file: res}));
+                        }else{
+                            reject(msg.channel.send(`bot machine bronk`));
+                        };
+                    });
                 });
-            });
-        }else if(command == `cade`){
-            return new Promise((fulfill, reject) => {
-                getPic(cadeURL).then((res) => {
-                    if(res != ``){
-                        fulfill(msg.channel.send({file: res}));
-                    }else{
-                        reject(msg.channel.send(`bot machine bronk`));
-                    };
+
+            case 'birb': case 'bird': case 'birdo': case 'flapflap':
+                return new Promise((fulfill, reject) => {
+                    getPic(birbURL).then((res) => {
+                        if(res != ``){
+                            fulfill(msg.channel.send({file: res}));
+                        }else{
+                            reject(msg.channel.send(`bot machine bronk`));
+                        };
+                    });
                 });
-            });
-        }else if(command == `birb`){
-            return new Promise((fulfill, reject) => {
-                getPic(birbURL).then((res) => {
-                    if(res != ``){
-                        fulfill(msg.channel.send({file: res}));
-                    }else{
-                        reject(msg.channel.send(`bot machine bronk`));
-                    };
-                });
-            });
-        }else if(command != ``){
-            msg.channel.send(`not a valid command, fucko.`)
-        };
+            default:
+                msg.channel.send(`not a valid command, fucko.`);
+        }
 
         function getPic(url){
             return new Promise((fulfill, reject) => {
